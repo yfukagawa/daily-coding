@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+import java.util.Stack;
 
 public class ToBinary {
     public static void main(String[] args) {
@@ -6,17 +8,19 @@ public class ToBinary {
 
         System.out.println("\nEnter a positive integer: ");
         int i = scanner.nextInt();
-//        int i = 223;
 
-        binary(i);
+        digitList(i);
 
     }
 
-    public static void binary(int i) {
-        while (i > 0) {
-            int binary = i % 2;
-            System.out.print(binary);
-            i = i / 2;
+    public static void digitList(int i) {
+        Stack<Integer> digitList = new Stack();
+        while (i>0) {
+            int digit = i%2;
+            digitList.add(digit);
+            i = i/2;
         }
+        System.out.println(digitList.toString().replace(",",""));
+
     }
 }
