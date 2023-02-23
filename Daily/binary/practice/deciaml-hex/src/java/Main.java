@@ -20,7 +20,7 @@ public class Main {
     public static void digitList(int i) {
         int quotient = i;
         int remainder = i;
-        Stack<Integer> digitList = new Stack<>();
+        LinkedList<Integer> digitList = new LinkedList<>();
 
         while(quotient > 0) {
             remainder = quotient%16;
@@ -39,7 +39,7 @@ public class Main {
                 hex[j] = "1";
             }
             if (toHex[j].equals(2)) {
-                hex[j] = "3";
+                hex[j] = "2";
             }
             if (toHex[j].equals(3)) {
                 hex[j] = "3";
@@ -83,7 +83,7 @@ public class Main {
         }
 
 //        System.out.println(Arrays.toString(hex).replace(",",""));
-        for (int j = 0; j < hex.length; j++) {
+        for (int j = hex.length-1; j >= 0; j--) {
             System.out.print(hex[j]);
         }
     }
